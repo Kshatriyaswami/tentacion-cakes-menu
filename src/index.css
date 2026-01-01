@@ -2,95 +2,101 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
-All colors MUST be HSL.
-*/
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Nunito:wght@300;400;500;600;700&display=swap');
 
+/* Tentacion Cake Shop Design System */
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+    /* Main brand colors - Chocolate & Cream theme */
+    --background: 32 63% 89%; /* Cream #F6E4CF */
+    --foreground: 0 33% 17%; /* Dark brown text #3A1F1F */
 
-    --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
+    --card: 32 50% 94%; /* Lighter cream for cards */
+    --card-foreground: 0 33% 17%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
+    --popover-foreground: 0 33% 17%;
 
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
+    --primary: 0 33% 27%; /* Chocolate brown #5A2E2E */
+    --primary-foreground: 32 63% 89%;
 
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
+    --secondary: 32 63% 89%; /* Cream */
+    --secondary-foreground: 0 33% 27%;
 
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
+    --muted: 32 40% 85%;
+    --muted-foreground: 0 20% 40%;
 
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
+    --accent: 6 70% 53%; /* Cherry red #D83A2E */
+    --accent-foreground: 0 0% 100%;
 
     --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive-foreground: 0 0% 100%;
 
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
+    --border: 0 20% 75%;
+    --input: 32 40% 85%;
+    --ring: 0 33% 27%;
 
-    --radius: 0.5rem;
+    --radius: 0.75rem;
 
-    --sidebar-background: 0 0% 98%;
+    /* Custom tokens for Tentacion */
+    --chocolate: 0 33% 27%;
+    --chocolate-dark: 0 35% 20%;
+    --cream: 32 63% 89%;
+    --cream-light: 32 60% 95%;
+    --cherry: 6 70% 53%;
+    --cherry-dark: 6 70% 45%;
+    --gold: 42 75% 55%;
 
-    --sidebar-foreground: 240 5.3% 26.1%;
+    /* Gradients */
+    --gradient-chocolate: linear-gradient(180deg, hsl(0 33% 27%) 0%, hsl(0 35% 20%) 100%);
+    --gradient-cream: linear-gradient(180deg, hsl(32 63% 89%) 0%, hsl(32 50% 94%) 100%);
+    --gradient-drip: linear-gradient(180deg, hsl(0 33% 27%) 0%, hsl(0 33% 27%) 60%, transparent 100%);
 
-    --sidebar-primary: 240 5.9% 10%;
+    /* Shadows */
+    --shadow-soft: 0 4px 20px -4px hsl(0 33% 27% / 0.15);
+    --shadow-card: 0 8px 30px -8px hsl(0 33% 27% / 0.2);
+    --shadow-hover: 0 12px 40px -8px hsl(0 33% 27% / 0.3);
 
-    --sidebar-primary-foreground: 0 0% 98%;
+    /* Fonts */
+    --font-display: 'Playfair Display', serif;
+    --font-body: 'Nunito', sans-serif;
 
-    --sidebar-accent: 240 4.8% 95.9%;
-
-    --sidebar-accent-foreground: 240 5.9% 10%;
-
-    --sidebar-border: 220 13% 91%;
-
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    /* Sidebar - keeping for compatibility */
+    --sidebar-background: 0 33% 27%;
+    --sidebar-foreground: 32 63% 89%;
+    --sidebar-primary: 32 63% 89%;
+    --sidebar-primary-foreground: 0 33% 27%;
+    --sidebar-accent: 6 70% 53%;
+    --sidebar-accent-foreground: 0 0% 100%;
+    --sidebar-border: 0 20% 35%;
+    --sidebar-ring: 6 70% 53%;
   }
 
   .dark {
-    --background: 222.2 84% 4.9%;
-    --foreground: 210 40% 98%;
+    --background: 0 33% 12%;
+    --foreground: 32 60% 90%;
 
-    --card: 222.2 84% 4.9%;
-    --card-foreground: 210 40% 98%;
+    --card: 0 30% 15%;
+    --card-foreground: 32 60% 90%;
 
-    --popover: 222.2 84% 4.9%;
-    --popover-foreground: 210 40% 98%;
+    --popover: 0 30% 15%;
+    --popover-foreground: 32 60% 90%;
 
-    --primary: 210 40% 98%;
-    --primary-foreground: 222.2 47.4% 11.2%;
+    --primary: 32 63% 89%;
+    --primary-foreground: 0 33% 17%;
 
-    --secondary: 217.2 32.6% 17.5%;
-    --secondary-foreground: 210 40% 98%;
+    --secondary: 0 25% 20%;
+    --secondary-foreground: 32 60% 90%;
 
-    --muted: 217.2 32.6% 17.5%;
-    --muted-foreground: 215 20.2% 65.1%;
+    --muted: 0 20% 25%;
+    --muted-foreground: 32 40% 70%;
 
-    --accent: 217.2 32.6% 17.5%;
-    --accent-foreground: 210 40% 98%;
+    --accent: 6 70% 53%;
+    --accent-foreground: 0 0% 100%;
 
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 210 40% 98%;
-
-    --border: 217.2 32.6% 17.5%;
-    --input: 217.2 32.6% 17.5%;
-    --ring: 212.7 26.8% 83.9%;
-    --sidebar-background: 240 5.9% 10%;
-    --sidebar-foreground: 240 4.8% 95.9%;
-    --sidebar-primary: 224.3 76.3% 48%;
-    --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 240 3.7% 15.9%;
-    --sidebar-accent-foreground: 240 4.8% 95.9%;
-    --sidebar-border: 240 3.7% 15.9%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    --border: 0 20% 25%;
+    --input: 0 20% 25%;
+    --ring: 32 63% 89%;
   }
 }
 
@@ -100,6 +106,161 @@ All colors MUST be HSL.
   }
 
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground font-body antialiased;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-display;
+  }
+}
+
+@layer components {
+  /* Chocolate drip effect */
+  .chocolate-drip {
+    position: relative;
+  }
+
+  .chocolate-drip::after {
+    content: '';
+    position: absolute;
+    bottom: -40px;
+    left: 0;
+    right: 0;
+    height: 60px;
+    background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 60' preserveAspectRatio='none'%3E%3Cpath fill='%235A2E2E' d='M0,0 L0,20 Q30,20 30,40 Q30,55 50,55 Q70,55 70,35 Q70,20 100,20 L100,0 Z M100,0 L100,20 Q130,20 130,35 Q130,50 160,50 Q190,50 190,30 Q190,20 220,20 L220,0 Z M220,0 L220,20 Q250,20 250,45 Q250,60 280,60 Q310,60 310,40 Q310,20 340,20 L340,0 Z M340,0 L340,20 Q370,20 370,30 Q370,45 400,45 Q430,45 430,25 Q430,20 460,20 L460,0 Z M460,0 L460,20 Q490,20 490,50 Q490,60 520,60 Q550,60 550,35 Q550,20 580,20 L580,0 Z M580,0 L580,20 Q610,20 610,40 Q610,55 640,55 Q670,55 670,30 Q670,20 700,20 L700,0 Z M700,0 L700,20 Q730,20 730,35 Q730,50 760,50 Q790,50 790,25 Q790,20 820,20 L820,0 Z M820,0 L820,20 Q850,20 850,45 Q850,60 880,60 Q910,60 910,40 Q910,20 940,20 L940,0 Z M940,0 L940,20 Q970,20 970,30 Q970,50 1000,50 Q1030,50 1030,35 Q1030,20 1060,20 L1060,0 Z M1060,0 L1060,20 Q1090,20 1090,40 Q1090,55 1120,55 Q1150,55 1150,30 Q1150,20 1180,20 L1180,0 Z M1180,0 L1180,20 Q1200,20 1200,20 L1200,0 Z'/%3E%3C/svg%3E") repeat-x;
+    background-size: 1200px 60px;
+    z-index: 10;
+  }
+
+  /* Cake card hover effects */
+  .cake-card {
+    @apply transition-all duration-300 ease-out;
+  }
+
+  .cake-card:hover {
+    @apply -translate-y-2;
+    box-shadow: var(--shadow-hover);
+  }
+
+  /* Cherry decoration */
+  .cherry-dot {
+    @apply w-3 h-3 rounded-full bg-accent inline-block;
+  }
+
+  /* Veg indicator */
+  .veg-indicator {
+    @apply w-6 h-6 border-2 border-green-600 flex items-center justify-center;
+  }
+
+  .veg-indicator::before {
+    content: '';
+    @apply w-3 h-3 rounded-full bg-green-600;
+  }
+}
+
+@layer utilities {
+  .font-display {
+    font-family: var(--font-display);
+  }
+
+  .font-body {
+    font-family: var(--font-body);
+  }
+
+  .text-chocolate {
+    color: hsl(var(--chocolate));
+  }
+
+  .bg-chocolate {
+    background-color: hsl(var(--chocolate));
+  }
+
+  .text-cream {
+    color: hsl(var(--cream));
+  }
+
+  .bg-cream {
+    background-color: hsl(var(--cream));
+  }
+
+  .bg-cream-light {
+    background-color: hsl(var(--cream-light));
+  }
+
+  .text-cherry {
+    color: hsl(var(--cherry));
+  }
+
+  .bg-cherry {
+    background-color: hsl(var(--cherry));
+  }
+
+  .shadow-soft {
+    box-shadow: var(--shadow-soft);
+  }
+
+  .shadow-card {
+    box-shadow: var(--shadow-card);
+  }
+
+  .shadow-hover {
+    box-shadow: var(--shadow-hover);
+  }
+
+  /* Animation utilities */
+  .animate-fade-up {
+    animation: fadeUp 0.5s ease-out forwards;
+  }
+
+  .animate-fade-in {
+    animation: fadeIn 0.3s ease-out forwards;
+  }
+
+  .animate-scale-in {
+    animation: scaleIn 0.3s ease-out forwards;
+  }
+
+  .animate-drip {
+    animation: drip 2s ease-in-out infinite;
+  }
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes drip {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(5px);
   }
 }
