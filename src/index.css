@@ -41,6 +41,7 @@
     /* Custom tokens for Tentacion */
     --chocolate: 0 33% 27%;
     --chocolate-dark: 0 35% 20%;
+    --chocolate-light: 0 25% 40%;
     --cream: 32 63% 89%;
     --cream-light: 32 60% 95%;
     --cherry: 6 70% 53%;
@@ -263,4 +264,19 @@
   50% {
     transform: translateY(5px);
   }
+}
+
+@keyframes pulse-slow {
+  0%, 100% {
+    transform: scale(1);
+    box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.4);
+  }
+  50% {
+    transform: scale(1.05);
+    box-shadow: 0 0 0 10px rgba(37, 211, 102, 0);
+  }
+}
+
+.animate-pulse-slow {
+  animation: pulse-slow 2s ease-in-out infinite;
 }

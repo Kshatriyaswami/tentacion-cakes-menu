@@ -2,6 +2,7 @@ import React from 'react';
 import { X } from 'lucide-react';
 import { Cake } from './CakeCard';
 import { Dialog, DialogContent, DialogTitle } from '@/components/ui/dialog';
+import WhatsAppButton from './WhatsAppButton';
 
 interface CakeModalProps {
   cake: Cake | null;
@@ -58,15 +59,22 @@ const CakeModal: React.FC<CakeModalProps> = ({ cake, isOpen, onClose }) => {
           </p>
 
           {cake.description && (
-            <p className="font-body text-muted-foreground leading-relaxed">
+            <p className="font-body text-muted-foreground leading-relaxed mb-6">
               {cake.description}
             </p>
           )}
 
-          {/* CTA */}
-          <div className="mt-6 pt-4 border-t border-border">
+          {/* WhatsApp Order CTA */}
+          <WhatsAppButton 
+            cakeName={cake.name} 
+            cakePrice={cake.price} 
+            variant="full" 
+          />
+
+          {/* Alternative contact */}
+          <div className="mt-4 pt-4 border-t border-border">
             <p className="font-body text-sm text-muted-foreground text-center">
-              Call us at <a href="tel:7507733414" className="text-accent font-semibold hover:underline">7507733414</a> to order this cake
+              Or call us at <a href="tel:7507733414" className="text-accent font-semibold hover:underline">7507733414</a>
             </p>
           </div>
         </div>
