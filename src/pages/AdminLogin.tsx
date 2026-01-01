@@ -120,13 +120,6 @@ const AdminLogin: React.FC = () => {
             </Button>
           </form>
 
-          {/* Demo credentials hint */}
-          <div className="mt-6 p-4 bg-muted rounded-lg">
-            <p className="font-body text-xs text-muted-foreground text-center">
-              Demo credentials:<br />
-              <span className="font-semibold">Username:</span> admin | <span className="font-semibold">Password:</span> tentacion2024
-            </p>
-          </div>
         </div>
 
         {/* Back to home */}

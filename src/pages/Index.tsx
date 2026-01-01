@@ -76,7 +76,15 @@ const Index: React.FC = () => {
         {/* Features Section */}
         <section className="py-16 bg-card">
           <div className="container mx-auto px-4">
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            <div className="text-center mb-10">
+              <span className="font-body text-accent text-sm uppercase tracking-wider">
+                Why Choose Us
+              </span>
+              <h2 className="font-display text-3xl md:text-4xl text-foreground mt-2">
+                Our Specialities
+              </h2>
+            </div>
+            <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8 max-w-5xl mx-auto">
               {[
                 {
                   title: '24 Hours Open',
@@ -101,14 +109,14 @@ const Index: React.FC = () => {
               ].map((feature, index) => (
                 <div
                   key={feature.title}
-                  className="text-center p-6 animate-fade-up"
+                  className="text-center p-4 md:p-6 animate-fade-up"
                   style={{ animationDelay: `${index * 100}ms` }}
                 >
-                  <div className="text-4xl mb-4">{feature.icon}</div>
-                  <h3 className="font-display text-xl text-foreground mb-2">
+                  <div className="text-3xl md:text-4xl mb-3 md:mb-4">{feature.icon}</div>
+                  <h3 className="font-display text-base md:text-xl text-foreground mb-2">
                     {feature.title}
                   </h3>
-                  <p className="font-body text-muted-foreground text-sm">
+                  <p className="font-body text-muted-foreground text-xs md:text-sm leading-relaxed">
                     {feature.description}
                   </p>
                 </div>

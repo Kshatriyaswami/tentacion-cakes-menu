@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { Menu, X, Phone } from 'lucide-react';
 import ChocolateDripHeader from './ChocolateDripHeader';
-import TentacionLogo from './TentacionLogo';
+import tentacionLogo from '@/assets/tentacion-logo-brand.jpg';
 
 const Header: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -21,6 +21,9 @@ const Header: React.FC = () => {
 
   return (
     <header className="relative bg-primary text-primary-foreground">
+      {/* Chocolate drip effect at top */}
+      <ChocolateDripHeader />
+      
       {/* Top bar with contact info */}
       <div className="bg-chocolate-dark py-2 px-4">
         <div className="container mx-auto flex items-center justify-between text-sm">
@@ -50,11 +53,15 @@ const Header: React.FC = () => {
       </div>
 
       {/* Main header */}
-      <div className="container mx-auto px-4 py-4">
+      <div className="container mx-auto px-4 py-3">
         <div className="flex items-center justify-between">
-          {/* Logo */}
+          {/* Logo Image */}
           <Link to="/" className="flex items-center">
-            <TentacionLogo size="md" />
+            <img 
+              src={tentacionLogo} 
+              alt="Tentacion Cake Shop" 
+              className="h-16 md:h-20 w-auto object-contain"
+            />
           </Link>
 
           {/* Desktop Navigation */}
@@ -70,11 +77,12 @@ const Header: React.FC = () => {
                 {link.name}
               </Link>
             ))}
+            {/* Minimal admin link */}
             <Link
               to="/admin"
-              className="bg-accent hover:bg-cherry-dark text-accent-foreground px-5 py-2 rounded-full font-semibold transition-all hover:scale-105"
+              className="text-cream/40 hover:text-cream/60 text-xs transition-colors"
             >
-              Admin
+              •
             </Link>
           </nav>
 
@@ -104,20 +112,10 @@ const Header: React.FC = () => {
                   {link.name}
                 </Link>
               ))}
-              <Link
-                to="/admin"
-                onClick={() => setIsMenuOpen(false)}
-                className="bg-accent hover:bg-cherry-dark text-accent-foreground px-5 py-3 rounded-full font-semibold text-center transition-all"
-              >
-                Admin
-              </Link>
             </div>
           </nav>
         )}
       </div>
-
-      {/* Chocolate drip effect */}
-      <ChocolateDripHeader />
     </header>
   );
 };

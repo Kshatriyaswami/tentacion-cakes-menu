@@ -8,10 +8,10 @@ interface AdminAuthContextType {
 
 const AdminAuthContext = createContext<AdminAuthContextType | undefined>(undefined);
 
-// Simple demo credentials - in production, use proper backend auth
-const DEMO_CREDENTIALS = {
-  username: 'admin',
-  password: 'tentacion2024'
+// Admin credentials
+const ADMIN_CREDENTIALS = {
+  username: 'tentacioncakes2026',
+  password: 'tentacioncakes@12'
 };
 
 export const AdminAuthProvider: React.FC<{ children: ReactNode }> = ({ children }) => {
@@ -26,7 +26,7 @@ export const AdminAuthProvider: React.FC<{ children: ReactNode }> = ({ children 
   }, []);
 
   const login = (username: string, password: string): boolean => {
-    if (username === DEMO_CREDENTIALS.username && password === DEMO_CREDENTIALS.password) {
+    if (username === ADMIN_CREDENTIALS.username && password === ADMIN_CREDENTIALS.password) {
       setIsAuthenticated(true);
       sessionStorage.setItem('admin_authenticated', 'true');
       return true;
