@@ -4,6 +4,7 @@ import Footer from '@/components/Footer';
 import HeroSection from '@/components/HeroSection';
 import CakeCard, { Cake } from '@/components/CakeCard';
 import CakeModal from '@/components/CakeModal';
+import WhatsAppButton from '@/components/WhatsAppButton';
 import { useCakes } from '@/contexts/CakeContext';
 
 const Index: React.FC = () => {
@@ -125,6 +126,9 @@ const Index: React.FC = () => {
         isOpen={isModalOpen}
         onClose={handleCloseModal}
       />
+
+      {/* Floating WhatsApp Button */}
+      <WhatsAppButton variant="floating" />
     </div>
   );
 };

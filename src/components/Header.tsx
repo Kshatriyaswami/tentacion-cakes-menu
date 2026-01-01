@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { Menu, X, Phone } from 'lucide-react';
 import ChocolateDripHeader from './ChocolateDripHeader';
-import tentacionLogo from '@/assets/tentacion-banner.jpg';
+import TentacionLogo from './TentacionLogo';
 
 const Header: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -54,13 +54,7 @@ const Header: React.FC = () => {
         <div className="flex items-center justify-between">
           {/* Logo */}
           <Link to="/" className="flex items-center">
-            <div className="bg-cream rounded-lg p-2 shadow-soft">
-              <img 
-                src={tentacionLogo} 
-                alt="Tentacion Cake Shop" 
-                className="h-12 sm:h-16 w-auto object-contain"
-              />
-            </div>
+            <TentacionLogo size="md" />
           </Link>
 
           {/* Desktop Navigation */}
