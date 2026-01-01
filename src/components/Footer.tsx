@@ -29,20 +29,20 @@ const Footer: React.FC = () => {
           {/* Services */}
           <div className="text-center">
             <h4 className="font-display text-xl text-cream mb-4">Our Specialties</h4>
-            <ul className="space-y-2 font-body text-cream/80">
-              <li className="flex items-center justify-center gap-2">
+            <ul className="space-y-2 font-body text-cream/80 inline-block text-left">
+              <li className="flex items-center gap-2">
                 <span className="w-2 h-2 rounded-full bg-accent"></span>
                 24 hrs Cake Shop
               </li>
-              <li className="flex items-center justify-center gap-2">
+              <li className="flex items-center gap-2">
                 <span className="w-2 h-2 rounded-full bg-accent"></span>
                 Custom Cakes
               </li>
-              <li className="flex items-center justify-center gap-2">
+              <li className="flex items-center gap-2">
                 <span className="w-2 h-2 rounded-full bg-accent"></span>
                 Photo Cakes
               </li>
-              <li className="flex items-center justify-center gap-2">
+              <li className="flex items-center gap-2">
                 <span className="w-2 h-2 rounded-full bg-accent"></span>
                 Wedding Cakes
               </li>
