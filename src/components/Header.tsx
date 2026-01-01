@@ -52,53 +52,49 @@ const Header: React.FC = () => {
         </div>
       </div>
 
-      {/* Main header */}
-      <div className="container mx-auto px-4 py-3">
-        <div className="flex items-center justify-between">
-          {/* Logo Image */}
-          <Link to="/" className="flex items-center">
-            <img 
-              src={tentacionLogo} 
-              alt="Tentacion Cake Shop" 
-              className="h-16 md:h-20 w-auto object-contain"
-            />
-          </Link>
-
-          {/* Desktop Navigation */}
-          <nav className="hidden md:flex items-center gap-8">
-            {navLinks.map((link) => (
+      {/* Main header with logo as background */}
+      <div 
+        className="relative bg-cover bg-center bg-no-repeat min-h-[100px] md:min-h-[120px]"
+        style={{ backgroundImage: `url(${tentacionLogo})` }}
+      >
+        <div className="container mx-auto px-4 py-6 md:py-8">
+          <div className="flex items-center justify-end">
+            {/* Desktop Navigation */}
+            <nav className="hidden md:flex items-center gap-8">
+              {navLinks.map((link) => (
+                <Link
+                  key={link.name}
+                  to={link.path}
+                  className={`font-body font-semibold text-lg transition-colors hover:text-accent drop-shadow-md ${
+                    isActive(link.path) ? 'text-accent' : 'text-primary'
+                  }`}
+                >
+                  {link.name}
+                </Link>
+              ))}
+              {/* Minimal admin link */}
               <Link
-                key={link.name}
-                to={link.path}
-                className={`font-body font-semibold text-lg transition-colors hover:text-accent ${
-                  isActive(link.path) ? 'text-accent' : 'text-cream'
-                }`}
+                to="/admin"
+                className="text-primary/40 hover:text-primary/60 text-xs transition-colors"
               >
-                {link.name}
+                •
               </Link>
-            ))}
-            {/* Minimal admin link */}
-            <Link
-              to="/admin"
-              className="text-cream/40 hover:text-cream/60 text-xs transition-colors"
-            >
-              •
-            </Link>
-          </nav>
+            </nav>
 
-          {/* Mobile menu button */}
-          <button
-            className="md:hidden text-cream p-2"
-            onClick={() => setIsMenuOpen(!isMenuOpen)}
-            aria-label="Toggle menu"
-          >
-            {isMenuOpen ? <X size={28} /> : <Menu size={28} />}
-          </button>
+            {/* Mobile menu button */}
+            <button
+              className="md:hidden text-primary p-2"
+              onClick={() => setIsMenuOpen(!isMenuOpen)}
+              aria-label="Toggle menu"
+            >
+              {isMenuOpen ? <X size={28} /> : <Menu size={28} />}
+            </button>
+          </div>
         </div>
 
         {/* Mobile Navigation */}
         {isMenuOpen && (
-          <nav className="md:hidden absolute top-full left-0 right-0 bg-primary z-50 border-t border-border/20 animate-fade-in">
+          <nav className="md:hidden absolute top-full left-0 right-0 bg-background z-50 border-t border-border/20 animate-fade-in">
             <div className="container mx-auto px-4 py-4 flex flex-col gap-4">
               {navLinks.map((link) => (
                 <Link
@@ -106,7 +102,7 @@ const Header: React.FC = () => {
                   to={link.path}
                   onClick={() => setIsMenuOpen(false)}
                   className={`font-body font-semibold text-lg py-2 transition-colors hover:text-accent ${
-                    isActive(link.path) ? 'text-accent' : 'text-cream'
+                    isActive(link.path) ? 'text-accent' : 'text-foreground'
                   }`}
                 >
                   {link.name}
