@@ -22,7 +22,7 @@ const HeroSection: React.FC = () => {
           <p className="font-body text-accent text-lg mb-4 animate-fade-up">Welcome to,</p>
           <h1 className="font-display text-5xl md:text-7xl text-cream mb-4 animate-fade-up" style={{
           animationDelay: '100ms'
-        }}>Tentacion Cake's</h1>
+        }}>Tentacion Cakes</h1>
           <p className="font-display text-2xl md:text-3xl text-cream/90 italic mb-6 animate-fade-up" style={{
           animationDelay: '200ms'
         }}>
