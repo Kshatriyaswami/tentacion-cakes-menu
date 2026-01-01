@@ -109,7 +109,7 @@ const Index: React.FC = () => {
               ].map((feature, index) => (
                 <div
                   key={feature.title}
-                  className="text-center p-4 md:p-6 animate-fade-up w-full max-w-[200px]"
+                  className="text-left p-4 md:p-6 animate-fade-up w-full max-w-[200px]"
                   style={{ animationDelay: `${index * 100}ms` }}
                 >
                   <div className="text-3xl md:text-4xl mb-3 md:mb-4">{feature.icon}</div>
