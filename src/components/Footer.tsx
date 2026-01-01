@@ -50,12 +50,12 @@ const Footer: React.FC = () => {
           </div>
 
           {/* Contact Info */}
-          <div className="text-center md:text-right">
+          <div className="text-center md:text-left">
             <h4 className="font-display text-xl text-cream mb-4">Contact Us</h4>
             <div className="space-y-3 font-body text-cream/80">
               <a
                 href="tel:7507733414"
-                className="flex items-center justify-center md:justify-end gap-2 hover:text-accent transition-colors"
+                className="flex items-center justify-center md:justify-start gap-2 hover:text-accent transition-colors"
               >
                 <Phone size={18} className="text-accent" />
                 7507733414
@@ -64,20 +64,20 @@ const Footer: React.FC = () => {
                 href="https://www.tentacioncakes.in"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center justify-center md:justify-end gap-2 hover:text-accent transition-colors"
+                className="flex items-center justify-center md:justify-start gap-2 hover:text-accent transition-colors"
               >
                 <Globe size={18} className="text-accent" />
                 www.tentacioncakes.in
               </a>
-              <div className="flex items-start justify-center md:justify-end gap-2">
+              <div className="flex items-start justify-center md:justify-start gap-2">
                 <MapPin size={18} className="text-accent flex-shrink-0 mt-1" />
-                <span className="text-sm">
+                <span className="text-sm text-left">
                   Sr.No. 15, Shop No. 6, Keshar Complex,<br />
                   Near Chintamani Dnyanpeeth,<br />
                   Ambegaon Pathar, Pune - 411 046
                 </span>
               </div>
-              <div className="flex items-center justify-center md:justify-end gap-2">
+              <div className="flex items-center justify-center md:justify-start gap-2">
                 <Clock size={18} className="text-accent" />
                 <span>Open 24 Hours</span>
               </div>
