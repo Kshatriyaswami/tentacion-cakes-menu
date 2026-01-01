@@ -84,7 +84,7 @@ const Index: React.FC = () => {
                 Our Specialities
               </h2>
             </div>
-            <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8 max-w-5xl mx-auto">
+            <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8 max-w-5xl mx-auto justify-items-center">
               {[
                 {
                   title: '24 Hours Open',
@@ -109,7 +109,7 @@ const Index: React.FC = () => {
               ].map((feature, index) => (
                 <div
                   key={feature.title}
-                  className="text-center p-4 md:p-6 animate-fade-up"
+                  className="text-center p-4 md:p-6 animate-fade-up w-full max-w-[200px]"
                   style={{ animationDelay: `${index * 100}ms` }}
                 >
                   <div className="text-3xl md:text-4xl mb-3 md:mb-4">{feature.icon}</div>
