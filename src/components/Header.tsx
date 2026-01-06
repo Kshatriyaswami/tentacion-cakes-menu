@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { Menu, X, Phone } from 'lucide-react';
 import ChocolateDripHeader from './ChocolateDripHeader';
-import tentacionLogo from '@/assets/tentacion-logo-brand.jpg';
+import tentacionLogo from '@/assets/tentacion-logo-navbar.jpg';
 const Header: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const location = useLocation();
@@ -47,15 +47,22 @@ const Header: React.FC = () => {
         </div>
       </div>
 
-      {/* Main header with logo as background */}
-      <div style={{
-      backgroundImage: "url(\"/lovable-uploads/baa6416e-3e10-4447-ba67-1ea02ed25e75.png\")"
-    }} className="relative bg-cover bg-center bg-no-repeat min-h-[100px] md:min-h-[120px] py-[30px] px-[110px] my-[5px] mx-[10px]">
-        <div className="container mx-auto px-4 py-6 md:py-8">
-          <div className="flex items-center justify-end">
+      {/* Main header with logo */}
+      <div className="bg-cream py-4 px-4">
+        <div className="container mx-auto">
+          <div className="flex items-center justify-between">
+            {/* Logo on the left */}
+            <Link to="/">
+              <img 
+                src={tentacionLogo} 
+                alt="Tentacion - Mesmerizing Cake & Pastry Shop" 
+                className="h-16 md:h-20 w-auto object-contain"
+              />
+            </Link>
+
             {/* Desktop Navigation */}
             <nav className="hidden md:flex items-center gap-8">
-              {navLinks.map(link => <Link key={link.name} to={link.path} className={`font-body font-semibold text-lg transition-colors hover:text-accent drop-shadow-md ${isActive(link.path) ? 'text-accent' : 'text-primary'}`}>
+              {navLinks.map(link => <Link key={link.name} to={link.path} className={`font-body font-semibold text-lg transition-colors hover:text-accent ${isActive(link.path) ? 'text-accent' : 'text-primary'}`}>
                   {link.name}
                 </Link>)}
               {/* Minimal admin link */}
