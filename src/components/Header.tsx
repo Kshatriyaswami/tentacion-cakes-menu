@@ -48,20 +48,16 @@ const Header: React.FC = () => {
       </div>
 
       {/* Main header with logo */}
-      <div className="bg-cream py-4 px-4">
+      <div className="py-4 px-4 bg-chocolate-dark">
         <div className="container mx-auto">
           <div className="flex items-center justify-between">
             {/* Logo on the left */}
             <Link to="/">
-              <img 
-                src={tentacionLogo} 
-                alt="Tentacion - Mesmerizing Cake & Pastry Shop" 
-                className="h-16 md:h-20 w-auto object-contain"
-              />
+              <img src={tentacionLogo} alt="Tentacion - Mesmerizing Cake & Pastry Shop" className="h-16 md:h-20 w-auto border-none object-fill" />
             </Link>
 
             {/* Desktop Navigation */}
-            <nav className="hidden md:flex items-center gap-8">
+            <nav className="hidden md:flex items-center gap-8 bg-cream text-cream">
               {navLinks.map(link => <Link key={link.name} to={link.path} className={`font-body font-semibold text-lg transition-colors hover:text-accent ${isActive(link.path) ? 'text-accent' : 'text-primary'}`}>
                   {link.name}
                 </Link>)}
